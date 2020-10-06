@@ -3,7 +3,8 @@
 		<div class="index-li">
 			<a href="<%- url_for(post.path) %>">
 				<h2 class="index-title">
-					<%- post.slug.split("/")[post.slug.split("/").length-1] %>
+					<!-- <%- post.slug.split("/")[post.slug.split("/").length-1] %> -->
+					<%- post.title %>
 				</h2>
 				<div class="index-brief">
 					<%- post.more.replace(/<\/?.+?\/?>/g, "").substring(0, 150) %>
@@ -26,9 +27,9 @@
                             <% } %>
                     <% } %>
                 </div>
-		</div>	
+		</div>
 	<% }); %>
-	
+
 	<div id="index-paginator">
 		<% if (page.total > 1){ %>
 			<%- paginator({
